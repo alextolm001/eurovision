@@ -1,13 +1,27 @@
-version: '3.8'
+version: "3.9"
+
 services:
   shuffle1:
-    build: ./SHUFFLE_1
+    build:
+      context: ./SHUFFLE_1
+      dockerfile: Dockerfile
+    container_name: shuffle1
     volumes:
       - ./SHUFFLE_1:/app
-    command: ["python", "count_votes.py"]
+    working_dir: /app
+    environment:
+      - PYSPARK_PYTHON=python
+    command: python count_votes.py
 
   shuffle2:
-    build: ./SHUFFLE_2
+    build:
+      context: ./SHUFFLE_2
+      dockerfile: Dockerfile
+    container_name: shuffle2
+    depends_on:
+      - shuffle1
     volumes:
       - ./SHUFFLE_2:/app
-    command: ["python", "final_ranking.py"]
+      - ./SHUFFLE_1/reduced_votes.json:/app/reduced_votes.json
+    working_dir: /app
+    command: python final_ranking.py
