@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  shuffle1:
+    build: ./SHUFFLE_1
+    volumes:
+      - ./SHUFFLE_1:/app
+    command: ["python", "count_votes.py"]
+
+  shuffle2:
+    build: ./SHUFFLE_2
+    volumes:
+      - ./SHUFFLE_2:/app
+    command: ["python", "final_ranking.py"]
