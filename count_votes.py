@@ -7,9 +7,9 @@ import json
 
 # ===== CONFIG =====
 SERVICE_ACCOUNT_FILE = "service_account.json"
-INPUT_FOLDER_ID = "1dvuwVEPnCEiN7uK1lkTl8ZZL_lAta5kB"     
-OUTPUT_FOLDER_ID = "1BqafbJaqYDzTe0en_IQnsPDZOGoHizql"     
-INPUT_FILE_NAME = "generated_votes_be.txt"
+INPUT_FOLDER_ID = "1CeJKRS9Dv_dXyUT2rSdaKe9OR2ObK5KF"     
+OUTPUT_FOLDER_ID = "1CeJKRS9Dv_dXyUT2rSdaKe9OR2ObK5KF"     
+INPUT_FILE_NAME = "vote_upload_fr.py.txt"
 OUTPUT_FILE_NAME = "reduced_votes.json"
 
 # ===== AUTHENTICATE TO GOOGLE DRIVE =====
