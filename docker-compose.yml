@@ -2,7 +2,7 @@ services:
   shuffle1:
     build:
       context: .
-      dockerfile: Dockerfile_1
+      dockerfile: shuffle1.Dockerfile
     volumes:
       - .:/app
     container_name: shuffle1
